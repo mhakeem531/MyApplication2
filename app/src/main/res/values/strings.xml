@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Posta</string>
+    <string name="write_your_transient_hint">write your transient hint</string>
+    <string name="your_name">Your Name</string>
+    <string name="post">post</string>
+    <string name="no_posts">No posts Yet</string>
+</resources>
