@@ -89,10 +89,18 @@ public class TimeLine extends AppCompatActivity {
             }
         };
 
-        adapter = new PostAdapter(this, allPosts);
-        listView.setAdapter(adapter);
-        final Thread th = new Thread(runnable);
+         final Thread th = new Thread(runnable);
         th.start();
+        try {
+            th.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        th.setPriority(Thread.MAX_PRIORITY);
+        if(!th.isAlive()){
+            adapter = new PostAdapter(this, allPosts);
+            listView.setAdapter(adapter);
+        }
 
     }
 }
